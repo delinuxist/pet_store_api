@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  pet-db:
+    image: postgres:13
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: petDB
+      POSTGRES_PASSWORD: petPassword123
+      POSTGRES_DB: pet
