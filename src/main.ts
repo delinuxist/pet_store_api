@@ -11,6 +11,8 @@ async function bootstrap() {
     }),
   );
 
+  app.setGlobalPrefix('api');
+
   const config = new DocumentBuilder()
     .setTitle('Pet API')
     .setDescription('Api for Pets')
