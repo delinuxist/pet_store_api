@@ -12,6 +12,7 @@ async function bootstrap() {
   );
 
   app.setGlobalPrefix('api');
+  app.enableCors();
 
   const config = new DocumentBuilder()
     .setTitle('Pet API')
