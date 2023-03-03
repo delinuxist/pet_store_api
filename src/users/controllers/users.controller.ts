@@ -3,7 +3,6 @@ import {
   Controller,
   Get,
   Param,
-  Post,
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
@@ -16,11 +15,6 @@ export class UsersController {
   constructor(private usersService: UsersService) {}
 
   @ApiCreatedResponse({ type: UserEntity })
-  @Post()
-  createUser() {
-    return 'Create user';
-  }
-
   @UseInterceptors(ClassSerializerInterceptor)
   @Get(':userId')
   getProfile(@Param('userId') userId: string): UserEntity {
@@ -38,5 +32,10 @@ export class UsersController {
       createdAt: new Date(),
       updatedAt: new Date(),
     });
+  }
+
+  @Get()
+  async getUsers() {
+    return this.usersService.getUsers();
   }
 }
