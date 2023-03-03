@@ -1,3 +1,4 @@
+import { Prisma } from '@prisma/client';
 import { Exclude } from 'class-transformer';
 import { CreateAddressDto } from '../dtos';
 
@@ -14,10 +15,10 @@ export class UserEntity {
 
   updatedAt: Date;
 
-  address: CreateAddressDto;
+  address: CreateAddressDto | Prisma.JsonValue;
 
   @Exclude()
-  hash_password: string;
+  hashed_password: string;
 
   constructor(partial: Partial<UserEntity>) {
     Object.assign(this, partial);
