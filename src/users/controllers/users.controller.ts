@@ -34,7 +34,7 @@ export class UsersController {
         city: 'accra',
         town: '',
       },
-      hash_password: 'sdfadfasdf',
+      hashed_password: 'sdfadfasdf',
       createdAt: new Date(),
       updatedAt: new Date(),
     });
