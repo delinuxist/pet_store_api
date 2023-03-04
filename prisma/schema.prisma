@@ -17,6 +17,7 @@ model user {
   last_name       String
   hashed_password String
   address         Json
+  role            Role?    @default(USER)
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
   pets            pet[]
@@ -33,4 +34,9 @@ model pet {
   userId    String?
 
   @@map("pets")
+}
+
+enum Role {
+  ADMIN
+  USER
 }
