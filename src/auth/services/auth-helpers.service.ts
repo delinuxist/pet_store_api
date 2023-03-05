@@ -7,4 +7,11 @@ export class AuthHelperService {
     const hash = await argon.hash(password);
     return hash;
   }
+
+  async comparePassword(
+    password: string,
+    hashed_password: string,
+  ): Promise<boolean> {
+    return await argon.verify(hashed_password, password);
+  }
 }
