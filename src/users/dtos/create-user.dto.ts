@@ -1,5 +1,6 @@
 import { Type } from 'class-transformer';
 import {
+  IsAlphanumeric,
   IsEmail,
   IsNotEmpty,
   IsNotEmptyObject,
@@ -16,6 +17,10 @@ export class CreateUserDto {
   @IsNotEmpty()
   @IsString()
   last_name: string;
+
+  @IsNotEmpty()
+  @IsAlphanumeric()
+  username: string;
 
   @IsNotEmpty()
   @IsEmail()
