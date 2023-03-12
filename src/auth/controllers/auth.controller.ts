@@ -39,6 +39,11 @@ export class AuthController {
     return new UserEntity(req?.user);
   }
 
+  @Get()
+  async facebookSignIn() {
+    return 'Facebook login';
+  }
+
   @HttpCode(HttpStatus.NO_CONTENT)
   @Get('logout')
   logout(@GetSession() session: Session) {
