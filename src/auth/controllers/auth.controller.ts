@@ -39,9 +39,14 @@ export class AuthController {
     return new UserEntity(req?.user);
   }
 
-  @Get()
+  @Get('facebook')
   async facebookSignIn() {
     return 'Facebook login';
+  }
+
+  @Get('google/redirect')
+  async googleRedirect() {
+    return 'Google redirect';
   }
 
   @HttpCode(HttpStatus.NO_CONTENT)
