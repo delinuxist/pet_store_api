@@ -3,12 +3,15 @@ import {
   Controller,
   Get,
   Param,
+  UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiCreatedResponse, ApiTags } from '@nestjs/swagger';
+import { SignedInGuard } from '../../common/guard';
 import { UserEntity } from '../entities';
 import { UsersService } from '../services/users.service';
 
+@UseGuards(SignedInGuard)
 @ApiTags('users')
 @Controller('users')
 export class UsersController {

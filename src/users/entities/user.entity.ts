@@ -11,9 +11,13 @@ export class UserEntity {
 
   last_name: string;
 
+  username: string;
+
   createdAt: Date;
 
   updatedAt: Date;
+
+  role: 'USER' | 'ADMIN';
 
   address: CreateAddressDto | Prisma.JsonValue;
 
